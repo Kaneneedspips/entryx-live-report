@@ -88,7 +88,7 @@ const monthNames=['January','February','March','April','May','June','July','Augu
 const dailyData={
 '2025-12-4':{pnl:79.24,trades:7},
 '2025-12-5':{pnl:93.24,trades:8},
-'2025-12-8':{pnl:-97.28,trades:13}
+'2025-12-8':{pnl:-86.56,trades:14}
 };
 function renderCalendar(){const grid=document.getElementById('calendarGrid');const monthLabel=document.getElementById('calendarMonth');if(!grid||!monthLabel)return;monthLabel.textContent=monthNames[currentMonth]+' '+currentYear;grid.innerHTML='';const headers=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];headers.forEach(h=>{const d=document.createElement('div');d.className='calendar-day-header';d.textContent=h;grid.appendChild(d)});const firstDay=new Date(currentYear,currentMonth,1).getDay();const daysInMonth=new Date(currentYear,currentMonth+1,0).getDate();for(let i=0;i<firstDay;i++){const d=document.createElement('div');d.className='calendar-day empty';grid.appendChild(d)}for(let day=1;day<=daysInMonth;day++){const d=document.createElement('div');const key=currentYear+'-'+(currentMonth+1)+'-'+day;const data=dailyData[key];if(data){d.className='calendar-day '+(data.pnl>=0?'profit':'loss');d.innerHTML='<div class="day-num">'+day+'</div><div class="day-pnl">'+(data.pnl>=0?'+':'')+'\u00A3'+data.pnl.toFixed(2)+'</div><div class="day-trades">'+data.trades+' trade'+(data.trades!==1?'s':'')+'</div>'}else{d.className='calendar-day no-trades';d.innerHTML='<div class="day-num">'+day+'</div>'}grid.appendChild(d)}}
 function prevMonth(){currentMonth--;if(currentMonth<0){currentMonth=11;currentYear--}renderCalendar()}
@@ -102,20 +102,20 @@ document.addEventListener('DOMContentLoaded',renderCalendar);
 <h1>ENTRYX TRADING JOURNAL</h1>
 <div class='subtitle'>Kane Leathers | Live Account | Prop Firm Compliant</div>
 <div class='balance-row'>
-<div class='balance-item'><div class='label'>Current Balance</div><div class='value neutral'>&pound;1022.34</div></div>
-<div class='balance-item'><div class='label'>Equity</div><div class='value'>&pound;1022.34</div></div>
-<div class='balance-item'><div class='label'>Starting Balance</div><div class='value'>&pound;947.14</div></div>
-<div class='balance-item'><div class='label'>Total P/L</div><div class='value positive'>+&pound;75.20</div></div>
+<div class='balance-item'><div class='label'>Current Balance</div><div class='value neutral'>&pound;1032.88</div></div>
+<div class='balance-item'><div class='label'>Equity</div><div class='value'>&pound;1035.43</div></div>
+<div class='balance-item'><div class='label'>Starting Balance</div><div class='value'>&pound;946.96</div></div>
+<div class='balance-item'><div class='label'>Total P/L</div><div class='value positive'>+&pound;85.92</div></div>
 </div></div>
 <div class='stats-grid'>
-<div class='card'><div class='label'>Net Profit</div><div class='value positive'>+&pound;75.20</div><div class='subtext'>+7.94% return</div></div>
-<div class='card'><div class='label'>Total Trades</div><div class='value neutral'>28</div><div class='subtext'>18W / 10L</div></div>
-<div class='card'><div class='label'>Win Rate</div><div class='value positive'>64.3%</div><div class='subtext'>18 winning trades</div></div>
-<div class='card'><div class='label'>Profit Factor</div><div class='value positive'>1.61</div><div class='subtext'>Gross profit / loss</div></div>
+<div class='card'><div class='label'>Net Profit</div><div class='value positive'>+&pound;85.92</div><div class='subtext'>+9.07% return</div></div>
+<div class='card'><div class='label'>Total Trades</div><div class='value neutral'>29</div><div class='subtext'>19W / 10L</div></div>
+<div class='card'><div class='label'>Win Rate</div><div class='value positive'>65.5%</div><div class='subtext'>19 winning trades</div></div>
+<div class='card'><div class='label'>Profit Factor</div><div class='value positive'>1.70</div><div class='subtext'>Gross profit / loss</div></div>
 <div class='card'><div class='label'>Max Drawdown</div><div class='value negative'>&pound;118.96</div><div class='subtext'>10.63% of peak</div></div>
 </div>
 <div class='stats-grid-6'>
-<div class='card'><div class='label'>Avg Win</div><div class='value positive'>&pound;11.03</div></div>
+<div class='card'><div class='label'>Avg Win</div><div class='value positive'>&pound;11.01</div></div>
 <div class='card'><div class='label'>Avg Loss</div><div class='value negative'>&pound;12.33</div></div>
 <div class='card'><div class='label'>Largest Win</div><div class='value positive'>&pound;57.33</div></div>
 <div class='card'><div class='label'>Largest Loss</div><div class='value negative'>&pound;22.93</div></div>
@@ -128,36 +128,36 @@ document.addEventListener('DOMContentLoaded',renderCalendar);
 <line x1='60' y1='60' x2='1640' y2='60' stroke='rgba(203,255,56,0.1)' stroke-dasharray='4,4'/><text x='52' y='64' fill='#64748b' font-size='11' text-anchor='end'>&pound;1137</text>
 <line x1='60' y1='117' x2='1640' y2='117' stroke='rgba(203,255,56,0.1)' stroke-dasharray='4,4'/><text x='52' y='121' fill='#64748b' font-size='11' text-anchor='end'>&pound;1085</text>
 <line x1='60' y1='175' x2='1640' y2='175' stroke='rgba(203,255,56,0.1)' stroke-dasharray='4,4'/><text x='52' y='179' fill='#64748b' font-size='11' text-anchor='end'>&pound;1033</text>
-<line x1='60' y1='232' x2='1640' y2='232' stroke='rgba(203,255,56,0.1)' stroke-dasharray='4,4'/><text x='52' y='236' fill='#64748b' font-size='11' text-anchor='end'>&pound;982</text>
+<line x1='60' y1='232' x2='1640' y2='232' stroke='rgba(203,255,56,0.1)' stroke-dasharray='4,4'/><text x='52' y='236' fill='#64748b' font-size='11' text-anchor='end'>&pound;981</text>
 <line x1='60' y1='290' x2='1640' y2='290' stroke='rgba(203,255,56,0.1)' stroke-dasharray='4,4'/><text x='52' y='294' fill='#64748b' font-size='11' text-anchor='end'>&pound;930</text>
-<path d='M60,290 L60,270 L116,238 L172,237 L229,226 L285,218 L342,219 L398,184 L455,182 L511,172 L567,171 L624,160 L680,156 L737,154 L793,148 L850,142 L906,79 L962,92 L1019,118 L1075,130 L1132,141 L1188,154 L1245,171 L1301,186 L1357,186 L1414,183 L1470,198 L1527,211 L1583,192 L1640,187 L1640,290 Z' fill='url(#fillGrad)'/>
-<path d='M60,270 L116,238 L172,237 L229,226 L285,218 L342,219 L398,184 L455,182 L511,172 L567,171 L624,160 L680,156 L737,154 L793,148 L850,142 L906,79 L962,92 L1019,118 L1075,130 L1132,141 L1188,154 L1245,171 L1301,186 L1357,186 L1414,183 L1470,198 L1527,211 L1583,192 L1640,187' fill='none' stroke='url(#lineGrad)' stroke-width='2.5' stroke-linecap='round'/>
+<path d='M60,290 L60,270 L114,238 L168,237 L223,226 L277,218 L332,219 L386,184 L441,182 L495,172 L550,171 L604,160 L659,156 L713,154 L768,148 L822,142 L877,79 L931,92 L986,118 L1040,130 L1095,141 L1149,154 L1204,171 L1258,186 L1313,186 L1367,183 L1422,198 L1476,211 L1531,192 L1585,187 L1640,175 L1640,290 Z' fill='url(#fillGrad)'/>
+<path d='M60,270 L114,238 L168,237 L223,226 L277,218 L332,219 L386,184 L441,182 L495,172 L550,171 L604,160 L659,156 L713,154 L768,148 L822,142 L877,79 L931,92 L986,118 L1040,130 L1095,141 L1149,154 L1204,171 L1258,186 L1313,186 L1367,183 L1422,198 L1476,211 L1531,192 L1585,187 L1640,175' fill='none' stroke='url(#lineGrad)' stroke-width='2.5' stroke-linecap='round'/>
 </svg>
 </div></div>
 <div class='calendar-section'><div class='calendar-header'><div class='section-title'>Performance Calendar</div><div class='calendar-nav'><button onclick='prevMonth()'>&#8249;</button><div id='calendarMonth' class='calendar-month'></div><button onclick='nextMonth()'>&#8250;</button></div></div><div id='calendarGrid' class='calendar-grid'></div></div>
 <div class='chart-section'><div class='section-title'>Performance by Day of Week</div><div class='dow-chart'>
-<div class='dow-bar-container'><div class='dow-bar negative' style='height:140px;'></div><div class='dow-label'>Mon</div><div class='dow-value negative'>&pound;-97.28</div><div class='dow-trades'>13 trades</div></div>
+<div class='dow-bar-container'><div class='dow-bar negative' style='height:129px;'></div><div class='dow-label'>Mon</div><div class='dow-value negative'>&pound;-86.56</div><div class='dow-trades'>14 trades</div></div>
 <div class='dow-bar-container'><div class='dow-bar positive' style='height:4px;'></div><div class='dow-label'>Tue</div><div class='dow-value positive'>+&pound;0.00</div><div class='dow-trades'>0 trades</div></div>
 <div class='dow-bar-container'><div class='dow-bar positive' style='height:4px;'></div><div class='dow-label'>Wed</div><div class='dow-value positive'>+&pound;0.00</div><div class='dow-trades'>0 trades</div></div>
-<div class='dow-bar-container'><div class='dow-bar positive' style='height:114px;'></div><div class='dow-label'>Thu</div><div class='dow-value positive'>+&pound;79.24</div><div class='dow-trades'>7 trades</div></div>
-<div class='dow-bar-container'><div class='dow-bar positive' style='height:134px;'></div><div class='dow-label'>Fri</div><div class='dow-value positive'>+&pound;93.24</div><div class='dow-trades'>8 trades</div></div>
+<div class='dow-bar-container'><div class='dow-bar positive' style='height:118px;'></div><div class='dow-label'>Thu</div><div class='dow-value positive'>+&pound;79.24</div><div class='dow-trades'>7 trades</div></div>
+<div class='dow-bar-container'><div class='dow-bar positive' style='height:140px;'></div><div class='dow-label'>Fri</div><div class='dow-value positive'>+&pound;93.24</div><div class='dow-trades'>8 trades</div></div>
 </div></div>
 <div class='ls-container'>
 <div class='ls-card'><h3>Long Positions</h3><div class='ls-stats'><div class='ls-stat'><div class='label'>Trades</div><div class='value neutral'>13</div></div><div class='ls-stat'><div class='label'>Win Rate</div><div class='value'>69.2%</div></div><div class='ls-stat'><div class='label'>Net P/L</div><div class='value positive'>+&pound;26.17</div></div></div></div>
-<div class='ls-card'><h3>Short Positions</h3><div class='ls-stats'><div class='ls-stat'><div class='label'>Trades</div><div class='value neutral'>15</div></div><div class='ls-stat'><div class='label'>Win Rate</div><div class='value'>60.0%</div></div><div class='ls-stat'><div class='label'>Net P/L</div><div class='value positive'>+&pound;49.03</div></div></div></div></div>
+<div class='ls-card'><h3>Short Positions</h3><div class='ls-stats'><div class='ls-stat'><div class='label'>Trades</div><div class='value neutral'>16</div></div><div class='ls-stat'><div class='label'>Win Rate</div><div class='value'>62.5%</div></div><div class='ls-stat'><div class='label'>Net P/L</div><div class='value positive'>+&pound;59.75</div></div></div></div></div>
 <div class='section-title'>Performance by Symbol</div><div class='symbol-grid'>
-<div class='symbol-card'><h3>XAUUSD</h3><div class='symbol-stats-grid'><div class='symbol-stat'><div class='stat-label'>Net Profit</div><div class='stat-value positive'>+&pound;38.01</div></div><div class='symbol-stat'><div class='stat-label'>Trades</div><div class='stat-value'>18</div></div><div class='symbol-stat'><div class='stat-label'>Win Rate</div><div class='stat-value warning'>50.0%</div></div><div class='symbol-stat'><div class='stat-label'>Profit Factor</div><div class='stat-value warning'>1.31</div></div><div class='symbol-stat'><div class='stat-label'>Avg Win</div><div class='stat-value positive'>&pound;17.83</div></div><div class='symbol-stat'><div class='stat-label'>Avg Loss</div><div class='stat-value negative'>&pound;13.61</div></div><div class='symbol-stat'><div class='stat-label'>Avg Hold</div><div class='stat-value'>1m</div></div><div class='symbol-stat'><div class='stat-label'>Current</div><div class='stat-value positive'>1W</div></div></div></div>
+<div class='symbol-card'><h3>XAUUSD</h3><div class='symbol-stats-grid'><div class='symbol-stat'><div class='stat-label'>Net Profit</div><div class='stat-value positive'>+&pound;48.73</div></div><div class='symbol-stat'><div class='stat-label'>Trades</div><div class='stat-value'>19</div></div><div class='symbol-stat'><div class='stat-label'>Win Rate</div><div class='stat-value warning'>52.6%</div></div><div class='symbol-stat'><div class='stat-label'>Profit Factor</div><div class='stat-value warning'>1.40</div></div><div class='symbol-stat'><div class='stat-label'>Avg Win</div><div class='stat-value positive'>&pound;17.12</div></div><div class='symbol-stat'><div class='stat-label'>Avg Loss</div><div class='stat-value negative'>&pound;13.61</div></div><div class='symbol-stat'><div class='stat-label'>Avg Hold</div><div class='stat-value'>1m</div></div><div class='symbol-stat'><div class='stat-label'>Current</div><div class='stat-value positive'>2W</div></div></div></div>
 <div class='symbol-card'><h3>USTEC</h3><div class='symbol-stats-grid'><div class='symbol-stat'><div class='stat-label'>Net Profit</div><div class='stat-value positive'>+&pound;37.19</div></div><div class='symbol-stat'><div class='stat-label'>Trades</div><div class='stat-value'>10</div></div><div class='symbol-stat'><div class='stat-label'>Win Rate</div><div class='stat-value positive'>90.0%</div></div><div class='symbol-stat'><div class='stat-label'>Profit Factor</div><div class='stat-value positive'>48.68</div></div><div class='symbol-stat'><div class='stat-label'>Avg Win</div><div class='stat-value positive'>&pound;4.22</div></div><div class='symbol-stat'><div class='stat-label'>Avg Loss</div><div class='stat-value negative'>&pound;0.78</div></div><div class='symbol-stat'><div class='stat-label'>Avg Hold</div><div class='stat-value'>3m</div></div><div class='symbol-stat'><div class='stat-label'>Current</div><div class='stat-value positive'>7W</div></div></div></div>
 </div>
 <div class='table-section'><div class='section-title'>Daily Performance (Last 30 Days)</div><table><tr><th>Date</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net P/L</th><th>Largest Win</th><th>Largest Loss</th></tr>
-<tr style='background:rgba(239,68,68,0.1);'><td>2025.12.08</td><td>13</td><td class='positive'>4</td><td class='negative'>9</td><td>30.8%</td><td class='negative'>&pound;-97.28</td><td class='positive'>&pound;16.94</td><td class='negative'>&pound;22.93</td></tr>
+<tr style='background:rgba(239,68,68,0.1);'><td>2025.12.08</td><td>14</td><td class='positive'>5</td><td class='negative'>9</td><td>35.7%</td><td class='negative'>&pound;-86.56</td><td class='positive'>&pound;16.94</td><td class='negative'>&pound;22.93</td></tr>
 <tr style='background:rgba(203,255,56,0.1);'><td>2025.12.05</td><td>8</td><td class='positive'>8</td><td class='negative'>0</td><td>100.0%</td><td class='positive'>+&pound;93.24</td><td class='positive'>&pound;57.33</td><td class='negative'>&pound;0.00</td></tr>
 <tr><td>2025.12.04</td><td>7</td><td class='positive'>6</td><td class='negative'>1</td><td>85.7%</td><td class='positive'>+&pound;79.24</td><td class='positive'>&pound;31.39</td><td class='negative'>&pound;0.78</td></tr>
 </table></div>
 <div class='table-section'><div class='section-title'>Monthly Summary</div><table><tr><th>Month</th><th>Trades</th><th>W / L</th><th>Win Rate</th><th>Net P/L</th><th>% Gain</th></tr>
-<tr><td>Dec 2025</td><td>28</td><td><span class='positive'>18</span> / <span class='negative'>10</span></td><td>64%</td><td class='positive'>+&pound;75.20</td><td class='positive'>+7.94%</td></tr>
+<tr><td>Dec 2025</td><td>29</td><td><span class='positive'>19</span> / <span class='negative'>10</span></td><td>66%</td><td class='positive'>+&pound;85.92</td><td class='positive'>+9.07%</td></tr>
 </table></div>
-<div class='footer'><div class='footer-logo'>ENTRYX</div><p>Last Updated: 2025.12.08 16:59 (Server Time)</p></div>
+<div class='footer'><div class='footer-logo'>ENTRYX</div><p>Last Updated: 2025.12.08 17:14 (Server Time)</p></div>
 </div>
 </body>
 </html>
